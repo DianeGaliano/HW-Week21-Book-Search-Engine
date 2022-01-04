@@ -28,7 +28,7 @@ const resolvers = {
             if (!correctPassword) {
                 throw new AuthenticationError('Incorrect credentials');
             }
-            const token = signToken(user);
+            const token = singleToken(user);
             return { token, user };
         },
         saveBook: async (parent, {input}, context) => {
